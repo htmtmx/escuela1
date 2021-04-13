@@ -38,42 +38,44 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(136, 31);
+            this.txtUser.Location = new System.Drawing.Point(170, 35);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(199, 22);
+            this.txtUser.Size = new System.Drawing.Size(247, 24);
             this.txtUser.TabIndex = 0;
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(136, 71);
+            this.txtPwd.Location = new System.Drawing.Point(170, 80);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = 'X';
-            this.txtPwd.Size = new System.Drawing.Size(199, 22);
+            this.txtPwd.Size = new System.Drawing.Size(247, 24);
             this.txtPwd.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 34);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(72, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.Size = new System.Drawing.Size(64, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "usuario";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 74);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(42, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.Size = new System.Drawing.Size(92, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "contraseña";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(210, 130);
+            this.button1.Location = new System.Drawing.Point(263, 147);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(93, 26);
             this.button1.TabIndex = 4;
             this.button1.Text = "acceder";
             this.button1.UseVisualStyleBackColor = true;
@@ -83,24 +85,25 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(33, 133);
+            this.label3.Location = new System.Drawing.Point(42, 150);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 17);
+            this.label3.Size = new System.Drawing.Size(98, 18);
             this.label3.TabIndex = 5;
             this.label3.Text = "<comment>";
             this.label3.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 192);
+            this.ClientSize = new System.Drawing.Size(487, 216);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtUser);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

@@ -10,3 +10,15 @@ C:\Users\cesar\Dropbox\Mi PC (HP-Omen)\Documents\Visual Studio 2012\Projects\esc
 C:\Users\cesar\Dropbox\Mi PC (HP-Omen)\Documents\Visual Studio 2012\Projects\escuela1\escuela1\obj\Debug\escuela1.vista.frm_crud_alumno.resources
 C:\Users\cesar\Dropbox\Mi PC (HP-Omen)\Documents\Visual Studio 2012\Projects\escuela1\escuela1\obj\Debug\escuela1.vista.frm_principal.resources
 C:\Users\cesar\Dropbox\Mi PC (HP-Omen)\Documents\Visual Studio 2012\Projects\escuela1\escuela1\obj\Debug\escuela1.vista.frm_crud_profesor.resources
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\bin\Debug\escuela1.exe.config
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.exe
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.pdb
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\bin\Debug\escuela1.exe
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\bin\Debug\escuela1.pdb
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.csprojResolveAssemblyReference.cache
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.Form1.resources
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.Properties.Resources.resources
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.vista.frm_crud_alumno.resources
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.vista.frm_crud_profesor.resources
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.vista.frm_principal.resources
+C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.csproj.GenerateResource.Cache
