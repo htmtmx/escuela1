@@ -19,12 +19,12 @@ namespace escuela1.vista
         List<class_profesor> _listProfesores;
         class_alumno _AlumnoSelect = new class_alumno();
         class_profesor _ProfesorSelect = new class_profesor();
-        class_profesor _ProfesorLog = new class_profesor();
+        public static class_profesor _ProfesorLog = new class_profesor();
 
 
         public frm_principal(Form formAnterior, class_profesor profesor)
         {
-            this._ProfesorLog = profesor;
+            _ProfesorLog = profesor;
             this._Form = formAnterior;
             this._Form.Hide();
             InitializeComponent();
@@ -78,7 +78,8 @@ namespace escuela1.vista
         {
             gridAlumnos1.Rows.Clear();
             int i = 0;
-            
+            AutoCompleteStringCollection data = new AutoCompleteStringCollection();
+
             foreach (var alumno in _listAlumnos)
             {
                 i++;
@@ -91,9 +92,14 @@ namespace escuela1.vista
                 gridAlumnos1.Rows[renglon].Cells[5].Value = alumno.Fecha_registro.ToLongDateString() + " " + alumno.Fecha_registro.ToLongTimeString();
                 gridAlumnos1.Rows[renglon].Cells[6].Value = alumno.Estatus ? "ACTIVO" : "INACTIVO";
                 gridAlumnos1.Rows[renglon].DefaultCellStyle.BackColor = alumno.Estatus ? Color.GreenYellow : Color.Red;
+                data.Add(alumno.Matricula.ToString());
+
             }
            lblCountAlumnos.Text = "Se encontraron " + _listAlumnos.Count() + " alumnos";
-            
+           txtBuscar.AutoCompleteCustomSource = data;
+           txtBuscar.AutoCompleteMode = AutoCompleteMode.Suggest;
+           txtBuscar.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
         }
         private void cargaDatosGridProfesor(List<class_profesor> _listProfesores) 
         {
@@ -165,12 +171,14 @@ namespace escuela1.vista
                 string noEmpleado = gridProfesores1.Rows[gridProfesores1.CurrentRow.Index].Cells[1].Value.ToString();
                 _ProfesorSelect = _listProfesores.Find(x => x.No_empleado.Equals(Convert.ToInt64(noEmpleado)));
                 btnEditarProfesor.Enabled = true;
+                btnResetearPWD.Enabled = true;
                 btnEditarProfesor.Text = "Editar a " + _ProfesorSelect.Nombre;
 
             }
             catch (Exception)
             {
                 btnEditarProfesor.Enabled = false;
+                btnResetearPWD.Enabled = false;
                 btnEditarProfesor.Text = "Seleccione un registro para editar";
             }
         }
@@ -193,5 +201,51 @@ namespace escuela1.vista
         {
 
         }
+
+        private void btnResetearPWD_Click(object sender, EventArgs e)
+        {
+            if (_ProfesorSelect != null)
+            {
+                string message = "¿Esta seguro que deseas resetear la contraseña de " +_ProfesorSelect.NombreCompleto + "?";
+                string caption = "Resetear contraseña de "+_ProfesorSelect.NombreCompleto+"?";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+                // If the no button was pressed ...
+                if (result == DialogResult.Yes)
+                {
+                    if (!_ProfesorSelect.reserPw(_ProfesorSelect, true))
+                    {
+                        MessageBox.Show("No pudimos resetear la contraseña, error interno");
+                    }
+                    cargarProfesores();
+                }
+            }
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            frm_modificaPWD changepwd = new frm_modificaPWD(_ProfesorLog);
+            changepwd.ShowDialog();
+            cargarProfesores();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            BuscarGrid(txtBuscar.Text, "matricula");
+        }
+        private void BuscarGrid(string TextoABuscar, string Columna)
+        {
+            var rows = (from item in gridAlumnos1.Rows.Cast<DataGridViewRow>() let clave = Convert.ToString(item.Cells[Columna].Value) where clave == TextoABuscar select item);
+            gridAlumnos1.ClearSelection();
+            foreach (DataGridViewRow row in rows)
+            {
+                row.Selected = true;
+                gridAlumnos1.CurrentCell = gridAlumnos1.Rows[row.Index].Cells[1];
+                break;
+            }
+        }
+
     }
 }

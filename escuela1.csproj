@@ -70,6 +70,12 @@
     <Compile Include="vista\frm_crud_profesor.Designer.cs">
       <DependentUpon>frm_crud_profesor.cs</DependentUpon>
     </Compile>
+    <Compile Include="vista\frm_modificaPWD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frm_modificaPWD.Designer.cs">
+      <DependentUpon>frm_modificaPWD.cs</DependentUpon>
+    </Compile>
     <Compile Include="vista\frm_principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vista\frm_crud_profesor.resx">
       <DependentUpon>frm_crud_profesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frm_modificaPWD.resx">
+      <DependentUpon>frm_modificaPWD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\frm_principal.resx">
       <DependentUpon>frm_principal.cs</DependentUpon>

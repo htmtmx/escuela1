@@ -55,6 +55,13 @@ namespace escuela1.model
             get { return estatus; }
             set { estatus = value; }
         }
+        string nombreCompleto;
+
+        public string NombreCompleto
+        {
+            get { return Nombre+" "+Apaterno+" "+Amaterno; }
+            set { nombreCompleto = value; }
+        }
         public bool insertUpdateProfesor(class_profesor profesor, int tipo)
         {
             string s_insert = "INSERT INTO `profesor` (`no_empleado`, `id_persona_fk`, `salario`, `usuario`, `pwd`, `estatus`) VALUES ('" + profesor.No_empleado + "', '" + profesor.Id_persona_fk + "', '" + profesor.Salario + "', '" + profesor.Usuario + "', '" + profesor.Pwd + "', '" + (profesor.Estatus ? 1 : 0) + "')";
@@ -75,19 +82,36 @@ namespace escuela1.model
             catch (Exception e)
             {
                 MessageBox.Show("Error al registrar/actualizar profesor" + e);
-                return false;
                 Console.WriteLine(s_query);
+                return false;
             }
         }
-
-        public bool reserPw(class_profesor profesor)
+        /// <summary>
+        /// Modifica la contraseña de un profesor
+        /// </summary>
+        /// <param name="profesor">Objeto class_profesor</param>
+        /// <param name="accion">True = resetea, False = Modifica</param>
+        /// <returns>True si actualizo correctamente, False si ocurrio un error en ejecución</returns>
+        public bool reserPw(class_profesor profesor, bool accion)
         {
+            genClaves g = new genClaves();
+            //Si es TRUE resetea, si es FALSE cambia
+            string newpwd = accion ? g.encriptaMD5("0000") : g.encriptaMD5(profesor.pwd);
+            
+            //if (accion)
+            //{
+            //    newpwd = g.encriptaMD5("0000");
+            //}
+            //else
+            //{
+            //    newpwd = profesor.pwd;
+            //}
+
             //Resetear contraseña y cambiar
             //Resetear, lo pone en 0000
             //Cambiar, poner cualquier contraseña
-            genClaves g = new genClaves();
-            string pwreset = g.encriptaMD5("0000");
-            string s_query = "UPDATE pw = " + pwreset;// C O M P L E T A R               Q U E R Y
+            
+            string s_query = "UPDATE `profesor` SET `pwd` = '"+newpwd+"' WHERE `profesor`.`no_empleado` = "+profesor.No_empleado+"";// C O M P L E T A R               Q U E R Y
             conexion CONN = conexion.getInstance;
             Console.WriteLine(s_query);
             try
@@ -101,8 +125,8 @@ namespace escuela1.model
             catch (Exception e)
             {
                 MessageBox.Show("Error al registrar/actualizar profesor" + e);
-                return false;
                 Console.WriteLine(s_query);
+                return false;
             }
         }
 

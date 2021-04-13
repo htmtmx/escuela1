@@ -61,5 +61,10 @@ namespace escuela1
                 return false;
             }
         }
+
+        private void btnCreditos_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.facebook.com/ReCkreaStuDios");
+        }
     }
 }

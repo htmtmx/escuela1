@@ -22,3 +22,4 @@ C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.vista.frm_c
 C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.vista.frm_crud_profesor.resources
 C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.vista.frm_principal.resources
 C:\Users\GORIL\Desktop\PROYECTOS\ESCUELA\escuela1\obj\Debug\escuela1.csproj.GenerateResource.Cache
+C:\Users\cesar\Dropbox\Mi PC (HP-Omen)\Documents\Visual Studio 2012\Projects\escuela1\escuela1\obj\Debug\escuela1.vista.frm_modificaPWD.resources
